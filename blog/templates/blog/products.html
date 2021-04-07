@@ -1,0 +1,46 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block content %}
+<!--
+<div class="container">
+    <h2>Hello to lists products</h2>
+</div>
+<br>
+<div class="row mt-4" id="xx">
+
+{% for product in products %}
+
+    <div class="col-lg-4">
+    <h3>Name: {{product}}</h3><br>{{product.description}} <br>- price:{{product.price}}$<br>
+        <br>
+    </div>
+{% endfor %}
+
+
+</div>-->
+<div class="container-fluid" style="margin-top:130px;">
+    <div class="row mt-4" >
+        {% for product in products %}
+            <!-- Here exactly where i use the height 400px to make space between different row where  -->
+        <div class="col-lg-4 col-md-6  " style="height:420px;">
+            <!-- And also here we make height 400px to make our card in size we want -->
+            <div class="card" style="height:200px; " >
+                    {% if product.image %}
+
+                    <img src="{{product.image.url}}" alt="missing pic" class="card-img-top" height="200" width="170">
+                    {% endif %}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:center;">{{product.name}}</h5>
+                        <!-- here also i changed truncatewords it was 8 now 5 that makes me to make submit button in-line-->
+                <p class="card-text" style="text-align:center;">{{product.description|truncatewords:'5'}}
+                    <br> {{product.price|floatformat:4}}$
+                </p>
+                <a href="" class="btn btn-primary btn-block">Submit</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
