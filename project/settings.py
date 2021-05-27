@@ -146,5 +146,5 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailLogin']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+ALLOWED_HOSTS = ['your_app_name.herokuapp.com', 'localhost', '127.0.0.1']
 django_heroku.settings(locals())
