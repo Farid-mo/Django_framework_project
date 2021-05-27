@@ -7,10 +7,36 @@
     <h2> SignUp </h2>
 </div>
 <div class="container">
-    <form method="POST">
-        {% csrf_token %}
-        {{forms}}
-        <input type="submit" value="signup">
-    </form>
+<!--    <form method="POST">-->
+<!--        {% csrf_token %}-->
+        <form method="post">
+            {% csrf_token %}
+            <table class="tak">
+                <tr>
+                    <td>{{ forms.username.label_tag }}</td>
+                    <td>{{ forms.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ forms.email.label_tag }}</td>
+                    <td>{{ forms.email }}</td>
+                </tr>
+                <tr>
+                    <td>{{ forms.password1.label_tag }}</td>
+                    <td>{{ forms.password1 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ forms.password2.label_tag }}</td>
+                    <td>{{ forms.password2 }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="login" class="buttonsub"/>
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+
+
+
+<!--        {{forms}}-->
+<!--        <input type="submit" value="signup">-->
+<!--    </form>-->
 </div>
 {%endblock content%}
