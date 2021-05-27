@@ -27,7 +27,7 @@ SECRET_KEY = 'uwv2geu0*b6lya!p=mtdxnaxp*whn%v6h51q!hnpb)ug%8of2&'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
