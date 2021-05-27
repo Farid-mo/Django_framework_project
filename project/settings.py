@@ -24,8 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'uwv2geu0*b6lya!p=mtdxnaxp*whn%v6h51q!hnpb)ug%8of2&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -146,5 +145,5 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailLogin']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+# ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
 django_heroku.settings(locals())
