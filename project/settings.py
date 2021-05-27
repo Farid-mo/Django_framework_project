@@ -27,7 +27,7 @@ SECRET_KEY = 'uwv2geu0*b6lya!p=mtdxnaxp*whn%v6h51q!hnpb)ug%8of2&'
 DEBUG = False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -146,5 +146,5 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailLogin']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
+
 django_heroku.settings(locals())
