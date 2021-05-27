@@ -20,11 +20,20 @@
     .pic-nav{
         width: 60px;
     }
-</style>
-<body>
-{% include 'blog/navbar.html' %}
-{% block content%}
+    background{
 
+    }
+    .pic-back{
+        image-background : grey;
+    }
+</style>
+<body style="background-color:grey;">
+
+{% include 'blog/navbar.html' %}
+<!--<img src="{% static 'images/bbn.jpg' %}" alt="missing pic" class="pic-back">-->
+<!--<dev style="background-color: red;">-->
+
+{% block content%}
 {% endblock content%}
 
 </body>

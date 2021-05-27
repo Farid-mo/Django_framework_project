@@ -18,12 +18,31 @@
     .pic-nav{
         width:60px;
     }
+    .tik{
+        margin-left:500px;
+    }
+    .buttonsub{
+        background-color:green;
+        margin-left:670px;
+        margin-top:10px;
+    }
+    .buttonsu{
+        background-color:black;
+        margin-left:635px;
+        margin-top:10px;
+    }
 </style>
-<body>
+<body style="background-color:grey;">
 {%include 'profile/navbar.html'%}
-{%block content%}
+<div class="container-fluid" style="margin-top:100px;">
+<!--    <div class="row mt-12" >-->
+<!--        <div class="col-lg-12 col-md-4" >-->
+            {%block content%}
 
-{%endblock content%}
+            {%endblock content%}
+<!--    </div>-->
+<!--</div>-->
+
 
 </body>
     <!-- Optional JavaScript -->
