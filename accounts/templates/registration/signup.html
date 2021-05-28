@@ -6,10 +6,10 @@
 <div class="container">
     <h2> SignUp </h2>
 </div>
-<div class="container">
+<div class="container-fluid">
 <!--    <form method="POST">-->
 <!--        {% csrf_token %}-->
-        <form method="post">
+        <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
             <table class="tak">
                 <tr>

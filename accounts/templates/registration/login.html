@@ -1,7 +1,7 @@
 {% extends "profile/main.html" %}
 {% load static %}
 {% block content %}
-
+<div class="ddd">
   {% if form.errors %}
     <p>Your username or password doesn't exists. Please try again.</p>
   {% endif %}
@@ -33,5 +33,5 @@
 
   {# Assumes you setup the password_reset view in your URLconf #}
   <p><a href="{% url 'password_reset' %}" class="buttonsu">Lost password ?</a></p>
-
+</div>
 {% endblock %}

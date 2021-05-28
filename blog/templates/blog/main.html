@@ -27,8 +27,15 @@
         image-background : grey;
     }
 
+    .dd{
+        background-image:url('static/images/b.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
 </style>
-<body style="background-color:grey;">
+<!--<body style="background-image:url('static/images/b.jpg');">-->
+<body class="dd">
 
 <!--<img src="{% static 'images/b.jpg' %}" alt="missing pic" class="pic-back">-->
 
@@ -36,8 +43,8 @@
 <!--<dev style="background-color: red;">-->
 
 {% block content%}
-{% endblock content%}
 
+{% endblock content%}
 </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
