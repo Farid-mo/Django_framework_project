@@ -26,8 +26,48 @@ SECRET_KEY = 'uwv2geu0*b6lya!p=mtdxnaxp*whn%v6h51q!hnpb)ug%8of2&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
+                       'pathname=%(pathname)s lineno=%(lineno)s '
+                       'funcname=%(funcName)s %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}
+
+
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['webfarid.herokuapp.com']
 
 
 # Application definition
@@ -148,3 +188,7 @@ AUTHENTICATION_BACKENDS = ['accounts.backends.EmailLogin']
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'localhost', '127.0.0.1']
 django_heroku.settings(locals())
+
+
+
+
