@@ -31,13 +31,18 @@
         margin-left:635px;
         margin-top:10px;
     }
-
+    .ds{
+        background-image:url('/static/images/bg1.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
 </style>
 
-<!--<body>-->
-<body style="background-color:grey;">
+<body class="ds">
+<!--<body style="background-color:grey;">-->
 {%include 'profile/navbar.html'%}
-<div class="container-fluid" style="margin-top:100px;">
+<div class="container-fluid" style="margin-top:40px;">
     {%block content%}
 
     {%endblock content%}

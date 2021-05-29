@@ -24,3 +24,5 @@ def signup(request):
 def profile(request):
     profile = Profile.objects.get(user=request.user)
     return render(request, 'profile/profile.html', {'profile': profile})
+
+
