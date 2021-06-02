@@ -1,6 +1,20 @@
 {% extends "profile/main.html" %}
 {% load static %}
+{% load bootstrap4 %}
 {% block content %}
-  <p>Logged out!</p>
-  <a href="{% url 'login'%}">Click here to login again.</a>
-{% endblock %}
+<div class="col-lg-4"></div>
+<div class="container-fluid" style="text-align:center; color:skyblue; font-family:i;">
+    <h2 style="font-weight: bold; margin-top:120px;"> Logged out </h2><br>
+</div>
+  <div class="d-grid gap-2 col-6 mx-auto" style="margin-top:50px;">
+    <a class="btn btn-primary btn-lg btn-block" href="{% url 'login' %}">Login again</a>
+  </div>
+</div>
+
+
+
+
+
+<div class="col-lg-4"></div>
+
+  {% endblock %}

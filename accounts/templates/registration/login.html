@@ -20,27 +20,31 @@
 
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-  <div class="container-fluid" style="text-align:center; ">
-    <h2 style="font-weight: bold; color:skyblue; "> LOGIN </h2><br><br>
+  <div class="container-fluid">
+      <div class="row mt-4">
+          <div class="col-lg-6">
+            <h2 style="font-weight: bold; color:skyblue; font-family:i; margin-top:60px; margin-left:150px; "> LOGIN TO YOUR
+            </h2><h2 style="font-weight: bold; color:skyblue; font-family:i; margin-top:-40px; margin-left:207px;"> <br>ACCOUNT </h2><br><br>
+          </div>
+          <div class="col-lg-6" style="margin-top:70px; color:skyblue; font-family:i;">
+              {% csrf_token %}
 
-      {% csrf_token %}
-      {% bootstrap_form form %}
-<!--      <div class="d-flex flex-row-reverse bd-highlight">-->
-
-        {% buttons %}
-    <br>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" value="login" class="btn btn-primary btn-lg btn-block">Submit</button>
-        </div>
-    <br>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            {# Assumes you setup the password_reset view in your URLconf #}
-            <p><a href="{% url 'password_reset' %}" class="btn btn-danger btn-lg btn-block">Lost password</a></p>
-        </div>
-      {% endbuttons %}
-
+              {% bootstrap_form form %}
+                {% buttons %}
+            <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button type="submit" value="login" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    {# Assumes you setup the password_reset view in your URLconf #}
+                    <p><a href="{% url 'password_reset' %}" class="btn btn-danger btn-lg btn-block">Lost password</a></p>
+                </div>
+              {% endbuttons %}
+          </div>
+      </div>
   </div>
-
-{% endblock %}
 </form>
+{% endblock %}
+
 
