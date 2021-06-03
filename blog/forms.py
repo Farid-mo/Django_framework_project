@@ -13,6 +13,3 @@ class ProductForm(UserCreationForm):
             return self.name
 
 
-
-
-

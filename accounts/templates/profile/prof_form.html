@@ -1,0 +1,16 @@
+{% extends "profile/main.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<form method="post">
+{% csrf_token %}
+{{data_profile}}
+{% buttons %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </div>
+{% endbuttons %}
+</form>
+
+{% endblock %}

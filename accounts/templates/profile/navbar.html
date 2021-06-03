@@ -11,35 +11,59 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           {% if user.is_authenticated %}
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
+          <li class="nav-item active" style="margin-left:90px;">
+            <a class="nav-link" href="/accounts/profile">Home</a>
           </li>
+
           {% endif %}
 
           <li class="nav-item">
             <a class="nav-link" href="/home/" id="pro">Products</a>
           </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+<!--          {% if user.is_authenticated %}-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>-->
+<!--          </li>-->
+<!--          {% endif %}-->
+
+
+
+<!--          {% url 'login' as my_view %}-->
+<!--          {% if request.path == my_view %}-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="/accounts/signup">SignUp</a>-->
+<!--          </li>-->
+<!--          {% endif %}-->
+          {% if request.user.is_authenticated %}
+          {% url 'accounts:profile' as my_view %}
+          {% if request.path == my_view %}
+          <li class="nav-item" style="margin-left:300px;">
+            <a class="nav-link" href="/accounts/edit">Edit Profile</a>
           </li>
           {% else %}
-          {% url '/accounts/signup/' as m_view %}
-          {% if request.path == m_view %}
+          <li class="nav-item" style="margin-left:300px;">
+            <a class="nav-link" href="/accounts/profile">Profile</a>
+          </li>
+          {% endif %}
+
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'logout' %}">logout</a>
           </li>
 
-          {% endif %}
+
+          {% else %}
+
           {% url 'login' as my_view %}
           {% if request.path == my_view %}
           <li class="nav-item">
             <a class="nav-link" href="/accounts/signup">SignUp</a>
           </li>
+          {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">logout</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
           {% endif %}
+
           {% endif %}
 
 
@@ -58,7 +82,7 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>-->
         </ul>
-        <form class="form-inline my-2 my-lg-0" >
+          <form class="form-inline my-2 my-lg-0" style="margin-left:500;">
           <input class="form-control mr-sm-2" type="search" placeholder="Search.." aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search
 

@@ -23,7 +23,7 @@
     <div class="row mt-4" >
         {% for product in products %}
             <!-- Here exactly where i use the height 400px to make space between different row where  -->
-        <div class="col-lg-4 col-md-6  " style="height:320px;">
+        <div class="col-lg-4 col-md-6" >
             <!-- And also here we make height 400px to make our card in size we want -->
             <div class="card" style="height:200px;">
                     {% if product.image %}
@@ -40,8 +40,8 @@
                 <a href="" class="btn btn-primary btn-block">Submit</a>
             </div>
         </div>
-
         {% endfor %}
+
     </div>
 </div>
 {% endblock content %}
