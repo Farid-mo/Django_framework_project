@@ -67,7 +67,7 @@ DEBUG = True
 #
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['webfarid.herokuapp.com']
+ALLOWED_HOSTS = ['webfarid.herokuapp.com', 'www.webfarid.herokuapp']
 
 
 # Application definition
