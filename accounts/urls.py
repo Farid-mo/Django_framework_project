@@ -9,6 +9,7 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('edit', UserEditView.as_view(), name='profile_edit'),
     path('form', views.profile_user, name='prof_form'),
+    # path('profilepk/<str:pk>/', views.profile_pk, name='prof_pk'),
 
 
 

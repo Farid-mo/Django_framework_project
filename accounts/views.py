@@ -6,16 +6,25 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.views import generic
 # Create your views here.
+from django.http import HttpResponse
+
+
+# def profile_pk(request, pk):
+#     data_profile = Profile.objects.get(pk=id)
+#     return render(request, '/accounts/profilepk/<str:pk>/')
 
 
 def profile_user(request):
     data_profile = ProfileUserForm(instance=request.user.profile)
     if request.method == "POST":
-        data_profile = ProfileUserForm(request.POST)
+        data_profile = ProfileUserForm(request.POST, request.FILES)
+        print(data_profile)
         # data_profile = data_profile
         if data_profile.is_valid():
             data_profile.save()
+            redirect('/accounts/profile')
     else:
+        # return redirect('/accounts/edit')
         data_profile = ProfileUserForm(instance=request.user.profile)
     context = {'data_profile': data_profile}
     return render(request, 'profile/prof_form.html', context)
@@ -41,7 +50,8 @@ def signup(request):
 
 def profile(request):
     profile = Profile.objects.get(user=request.user)
-    return render(request, 'profile/profile.html', {'profile': profile})
+    context = {'profile': profile}
+    return render(request, 'profile/profile.html', context)
 
 
 class UserEditView(generic.UpdateView):
@@ -60,6 +70,4 @@ class UserProfileEditView(generic.UpdateView):
 
     def get_object(self):
         return self.request.Profile.user
-
-
 

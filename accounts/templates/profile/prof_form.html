@@ -6,6 +6,9 @@
 <form method="post">
 {% csrf_token %}
 {{data_profile}}
+
+
+    <img src="{{data_profile.pic_profile.url}}" alt="missing pic">
 {% buttons %}
     <div class="d-grid gap-2 col-6 mx-auto">
         <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

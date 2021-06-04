@@ -8,3 +8,8 @@ def all_posts(request):
 
     return render(request, 'blog/products.html', {'products': all_products})
     #, {'products': all_products}
+
+
+def post(request, pk):
+    post = Product.objects.get(id=pk)
+    return render(request, 'blog/post.html', {'post': post})
